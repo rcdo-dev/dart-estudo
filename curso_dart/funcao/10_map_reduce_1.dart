@@ -1,10 +1,13 @@
 /**
- * Funções do tipo .map() transformam uma lista na outra, ou um Map em outro.
- * 
- * Podemos transformar o que está em um Map, numa lista de strings dos nomoes, ou
- * pegar esses nomes e transformar em quantidade de letras desses nomes.
+ * Funções do tipo .map() transformam uma lista de um tipo em outra lista
+ * de outro tipo. Podemos transformar o que está em um Map, numa lista de
+ * strings de nomes, ou pegar esses nomes e transformar em quantidade de
+ * letras desses nomes.
  * 
  * A ideia por trás de um .map é de transformação de um tipo para o outro.
+ * 
+  * Utilizando o map, nós sempre teremos uma nova lista com a mesma quantidade de
+  * elementos.
  */
 
 /**
@@ -22,20 +25,28 @@ main() {
 
   /**
    * Função que retorna uma string e como parâmetro recebe um Map.
-   * Isso é armazenado na variável através de uma função anonima com a
-   * chave "nome" do Map.
+   * Isso é armazenado na variável através de uma função anonima com
+   * retorno da chave "nome" do Map.
    */
   String Function(Map) pegarApenasONome = (aluno) => aluno['nome'];
 
+  /**
+   * Essa função recebe uma função anônima com parâmetro de texto e retorna a
+   * quantidade desse texto, o valor é armazenado na variável qtdeDeLetras do
+   * tipo função que tem o retorno de um inteiro.
+   */
   int Function(String) qtdeDeLetras = (texto) => texto.length;
 
   /**
-   * Utilização da função da função .map() a partir da notação ponto.
+   * Essa função dobra o resultado da função anterior.
    */
-  var nomes = alunos.map(pegarApenasONome);
-  print(nomes);
+  int Function(int) dobro = (numero) => numero * 2;
 
   /**
-   * Rever a essa aula completa!
+   * Utilização da função .map() a partir da notação ponto.
    */
+  var resultado = alunos.map(pegarApenasONome).map(qtdeDeLetras).map(dobro);
+
+  //print(nomes);
+  print(resultado);
 }

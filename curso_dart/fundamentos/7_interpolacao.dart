@@ -4,9 +4,9 @@ main() {
    * enxuto.
    */
 
-  String nome = 'João';
-  String status = 'aprovado';
-  double nota = 9.2;
+	  String nome = 'João';
+	  String status = 'aprovado';
+	  double nota = 9.2;
 
   // Concatenação.
   String frase1 =
